@@ -66,7 +66,7 @@ const AdminDash = () => {
         return (
             <Navbar className="bg-primary" expand="lg">
                 <Container>
-                    <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
+                    <NavbarBrand href="/admin" onClick={(e) => e.preventDefault()}>
                         Complaints
                     </NavbarBrand>
                     <button

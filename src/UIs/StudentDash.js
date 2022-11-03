@@ -117,7 +117,7 @@ const StudentDash = () => {
         return (
             <Navbar className="bg-primary" expand="lg">
                 <Container>
-                    <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
+                    <NavbarBrand href="/student" onClick={(e) => e.preventDefault()}>
                         Complaints
                     </NavbarBrand>
                     <button

@@ -67,7 +67,7 @@ const DepartmentDash = () => {
         return (
             <Navbar className="bg-primary" expand="lg">
                 <Container>
-                    <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
+                    <NavbarBrand href="/dept" onClick={(e) => e.preventDefault()}>
                         Complaints
                     </NavbarBrand>
                     <button

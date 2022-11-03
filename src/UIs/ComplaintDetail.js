@@ -38,7 +38,7 @@ const ComplaintDetail = () => {
         return (
             <Navbar className="bg-primary" expand="lg">
                 <Container>
-                    <NavbarBrand onClick={(e) => e.preventDefault()}>
+                    <NavbarBrand href={"/"+user.auth} >
                         Detail
                     </NavbarBrand>
                     <button
@@ -212,9 +212,25 @@ const ComplaintDetail = () => {
         return `${year}${separator}${month < 10 ? `0${month}` : `${month}`}${separator}${date}`
     }
     const updateComplaint = () => {
+        if(isChecked)
         if(isChecked && user.auth === "student"){
             complaint.resolved_student = isChecked;
-            complaint.resolved = getCurrentDate();
+            axios.post("https://web-prog-cm.herokuapp.com/complaint/delete", complaint)
+            .then(res => {
+                const r = res.data.message;
+                switch (r) {
+                    case "1":
+                        alert("Updated");
+                        break;
+                    default:
+                        break;
+                }
+            })
+            .catch((e) =>{ 
+                alert("Error in server :(")
+                console.log("error catch ->" + e)
+            });
+            return;
         }
         if (user.auth === "dept"){
             complaint.status = status;
