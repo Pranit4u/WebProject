@@ -56,12 +56,15 @@ const AddComplaint = () => {
             roll: user.roll,
             department: department,
             title: title,
-            detail: title,
-            docs: docs
+            detail: detail,
+            docs: docs,
+            private: isPrivate
         }
+        console.log(comp);
         axios.post("https://web-prog-cm.herokuapp.com/complaint/add", comp)
             .then(res => {
                 const r = res.data.message;
+                console.log(r);
                 switch (r) {
                     case "1":
                         alert("Complaint Added");
