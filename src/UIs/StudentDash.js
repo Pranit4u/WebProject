@@ -58,7 +58,9 @@ const StudentDash = () => {
         }
     };
 
-    const downVote = (comp) => {
+    const downVote = (e,comp) => {
+        e.preventDefault();
+
         if(comp.votelist.includes(roll)){
             comp.votes = comp.votes - 1;
             comp.votelist = comp.votelist.filter(item => item !== roll);
@@ -80,7 +82,8 @@ const StudentDash = () => {
         }
     }
 
-    const upVote = (comp) => {
+    const upVote = (e,comp) => {
+        e.preventDefault();
         if(!comp.votelist.includes(roll)){
             comp.votes = comp.votes + 1;
             comp.votelist.push(roll);
@@ -184,14 +187,14 @@ const StudentDash = () => {
                                                 justifyContent: 'center',
                                             }} className="ml-auto mr-auto" lg="2" md="4" xs="4">
                                                 <i
-                                                    onClick={()=>{downVote(comp)}}
+                                                    onClick={(e)=>{downVote(e,comp)}}
                                                     aria-hidden={true}
                                                     className="nc-icon nc-minimal-down"
                                                 />
 
                                                 <b style={{ padding: 10 }}>{comp.votes}</b>
                                                 <i
-                                                    onClick={()=>{upVote(comp)}}
+                                                    onClick={(e)=>{upVote(e,comp)}}
                                                     aria-hidden={true}
                                                     className="nc-icon nc-minimal-up"
                                                 />
