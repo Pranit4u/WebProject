@@ -88,7 +88,7 @@ root.render(
         path="/admin-login"
         render={(props) => <StudentLogin {...props} />}
       />
-      <Redirect to="/index" />
+      <Redirect to="/stud-login" />
     </Switch>
   </BrowserRouter>
 );
