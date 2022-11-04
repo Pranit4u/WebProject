@@ -15,3 +15,5 @@
 5.  Run in terminal `npm start`
 6.  Application will be running on `http://localhost:3000/`
 
+## Index file
+`index.js`
