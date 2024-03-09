@@ -31,9 +31,10 @@ const StudentLogin = () => {
         if (email.length === 0 || password.length === 0){
             return;
         }
-        axios.post("https://webback-kjge.onrender.com/login", {email,password})
+        axios.post("https://odprojback.onrender.com/login", {email,password})
             .then(res => {
                 const r = res.data.message;
+                console.log(res)
                 switch (r) {
                     case "0":
                         alert("Wrong credential");

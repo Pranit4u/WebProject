@@ -22,18 +22,19 @@ const AdminDash = () => {
     const [escalatedComplaints, setEscalatedComplaints] = useState([]);
 
     useEffect(() => {
-        let req1 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
+        let req1 = axios.get('https://odprojback.onrender.com/complaint/get', {
             params: {
                 private: false
             }
         });
         req1.then((res) => {
             setPublicComplaints(res.data);
+            console.log(res)
         }).catch((err) => {
             console.log(err)
         })
 
-        let req2 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
+        let req2 = axios.get('https://odprojback.onrender.com/complaint/get', {
             params: {
                 escalated: true
             }

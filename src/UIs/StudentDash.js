@@ -26,7 +26,7 @@ const StudentDash = () => {
     
 
     useEffect(() => {
-        let req1 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
+        let req1 = axios.get('https://odprojback.onrender.com/complaint/get', {
             params: {
                 private: false
             }
@@ -37,7 +37,7 @@ const StudentDash = () => {
             console.log(err)
         })
 
-        let req2 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
+        let req2 = axios.get('https://odprojback.onrender.com/complaint/get', {
             params: {
                 roll: roll,
                 private: true
@@ -64,7 +64,7 @@ const StudentDash = () => {
         if(comp.votelist.includes(roll)){
             comp.votes = comp.votes - 1;
             comp.votelist = comp.votelist.filter(item => item !== roll);
-            axios.post("https://webback-kjge.onrender.com/complaint/update", comp)
+            axios.post("https://odprojback.onrender.com/complaint/update", comp)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {
@@ -87,7 +87,7 @@ const StudentDash = () => {
         if(!comp.votelist.includes(roll)){
             comp.votes = comp.votes + 1;
             comp.votelist.push(roll);
-            axios.post("https://webback-kjge.onrender.com/complaint/update", comp)
+            axios.post("https://odprojback.onrender.com/complaint/update", comp)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

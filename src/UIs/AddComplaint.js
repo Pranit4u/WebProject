@@ -61,7 +61,7 @@ const AddComplaint = () => {
             private: isPrivate
         }
         console.log(comp);
-        axios.post("https://webback-kjge.onrender.com/complaint/add", comp)
+        axios.post("https://odprojback.onrender.com/complaint/add", comp)
             .then(res => {
                 const r = res.data.message;
                 console.log(r);

@@ -215,7 +215,7 @@ const ComplaintDetail = () => {
         if(isChecked)
         if(isChecked && user.auth === "student"){
             complaint.resolved_student = isChecked;
-            axios.post("https://webback-kjge.onrender.com/complaint/delete", complaint)
+            axios.post("https://odprojback.onrender.com/complaint/delete", complaint)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {
@@ -243,7 +243,7 @@ const ComplaintDetail = () => {
             }
         }
         complaint.escalated = escalate;
-        axios.post("https://webback-kjge.onrender.com/complaint/update", complaint)
+        axios.post("https://odprojback.onrender.com/complaint/update", complaint)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {
