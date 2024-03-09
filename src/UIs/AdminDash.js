@@ -22,7 +22,7 @@ const AdminDash = () => {
     const [escalatedComplaints, setEscalatedComplaints] = useState([]);
 
     useEffect(() => {
-        let req1 = axios.get('https://web-prog-cm.herokuapp.com/complaint/get', {
+        let req1 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
             params: {
                 private: false
             }
@@ -33,7 +33,7 @@ const AdminDash = () => {
             console.log(err)
         })
 
-        let req2 = axios.get('https://web-prog-cm.herokuapp.com/complaint/get', {
+        let req2 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
             params: {
                 escalated: true
             }

@@ -31,7 +31,7 @@ const StudentLogin = () => {
         if (email.length === 0 || password.length === 0){
             return;
         }
-        axios.post("https://web-prog-cm.herokuapp.com/login", {email,password})
+        axios.post("https://webback-kjge.onrender.com/login", {email,password})
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

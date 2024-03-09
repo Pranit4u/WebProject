@@ -23,7 +23,7 @@ const DepartmentDash = () => {
     const [departmentComplaints, setDepartmentComplaints] = useState([]);
 
     useEffect(() => {
-        let req1 = axios.get('https://web-prog-cm.herokuapp.com/complaint/get', {
+        let req1 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
             params: {
                 private: false
             }
@@ -34,7 +34,7 @@ const DepartmentDash = () => {
             console.log(err)
         })
 
-        let req2 = axios.get('https://web-prog-cm.herokuapp.com/complaint/get', {
+        let req2 = axios.get('https://webback-kjge.onrender.com/complaint/get', {
             params: {
                 department: department
             }
